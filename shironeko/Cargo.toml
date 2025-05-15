@@ -1,0 +1,24 @@
+[package]
+name = "shironeko"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "shironeko"
+crate-type = ["cdylib"]
+
+[dependencies]
+ilhook.workspace = true
+anyhow.workspace = true
+lazy_static.workspace = true
+libloading.workspace = true
+windows = { version = "0.54.0", features = [
+	"Win32_Foundation",
+	"Win32_System_SystemServices",
+	"Win32_System_LibraryLoader",
+	"Win32_System_Console",
+	"Win32_System_Threading",
+	"Win32_System_Memory",
+    "Win32_Networking",
+    "Win32_Networking_WinSock"
+] }
