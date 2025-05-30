@@ -47,7 +47,7 @@ unsafe extern "win64" fn on_connect(reg: *mut Registers, _: usize) {
     println!("[connect] IP: {ip}, Port: {port}");
 
     if ip == Ipv4Addr::new(43, 132, 55, 55) && port == 443 {
-        println!("↪ Overriding {ip}:{port} → 127.0.0.1:10443 (game.local fallback)");
+        println!("Overriding {ip}:{port} → 127.0.0.1:10443 (game.local fallback)");
         sockaddr.sin_addr.S_un.S_addr = u32::from(Ipv4Addr::LOCALHOST).to_be();
         sockaddr.sin_port = 10443u16.to_be();
         return;

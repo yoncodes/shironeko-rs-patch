@@ -12,7 +12,7 @@ mod interceptor;
 mod modules;
 mod util;
 
-use crate::modules::{CertBypass, Http, MhyContext, ModuleManager, Network, Socket};
+use crate::modules::{CertBypass, Http, MhyContext, ModuleManager, Network, Socket, Zfb};
 
 #[allow(clippy::manual_c_str_literals)]
 unsafe fn thread_func() {
@@ -36,6 +36,7 @@ unsafe fn thread_func() {
     module_manager.enable(MhyContext::<Network>::new(base));
     module_manager.enable(MhyContext::<Socket>::new(base));
     module_manager.enable(MhyContext::<CertBypass>::new(base));
+    //module_manager.enable(MhyContext::<Zfb>::new(base));
 
     println!("Successfully initialized!");
 }

@@ -16,11 +16,13 @@ mod certbypass;
 mod http;
 mod network;
 mod socket;
+mod zfb;
 
 pub use certbypass::CertBypass;
 pub use http::Http;
 pub use network::Network;
 pub use socket::Socket;
+pub use zfb::Zfb;
 
 #[derive(Default)]
 pub struct ModuleManager {
@@ -52,6 +54,7 @@ pub enum ModuleType {
     Network,
     Socket,
     CertBypass,
+    Zfb,
 }
 
 pub trait MhyModule {
